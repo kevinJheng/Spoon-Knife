@@ -1,1 +1,24 @@
 All that's missing is the fork. Heh.
+
+-----The total subtree work flow-----
+
+
+
+1. add subtree
+git subtree add --prefix DIR/xxx https://github.com master --squash
+###
+git subtree add --prefix incRepo https://github.com/kevinJheng/incRepo master --squash
+
+
+2. pull updates from the UPSTREM Repository
+git subtree pull --prefix DIR/xxx https://github.com master --squash
+###
+git subtree pull --prefix incRepo https://github.com/kevinJheng/incRepo master --squash
+
+
+3.Adding the sub-project as a remote
+git remote add -f tpope-vim-surround https://bitbucket.org/vim-plugins-mirror/vim-surround.git
+git subtree add --prefix DIR/xxx tpope-vim-surround master --squash
+
+4. push back subtree
+git subtree push --prefix DIR/xxx durdn-vim-surround master
